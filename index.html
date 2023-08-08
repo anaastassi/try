@@ -19,44 +19,883 @@
 
     <link rel="stylesheet" type="text/css" href="arrow.css" />
     <link rel="stylesheet" href="slider.css" />
-    <link rel="stylesheet" href="index.css" />
     <script src="js/slider.js"></script>
 
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="index.css" />
+
     <title>prana</title>
   </head>
-    <body>
-        <section>
-          <h1>-webkit-text-size-adjust: auto;</h1>
-          <div style="zoom: 1">zoom 1</div>
-          <div style="zoom: 2">zoom 2</div>
-          <div style="zoom: 3">zoom 3</div>
-          <div style="zoom: 4">zoom 4</div>
-          <div style="zoom: 5">zoom 5</div>
-          <div style="zoom: 0.5">zoom 0.5</div>
-        </section>
-        <section class="fixed">
-          <h1>-webkit-text-size-adjust: none;</h1>
-          <div style="zoom: 1">zoom 1</div>
-          <div style="zoom: 2">zoom 2</div>
-          <div style="zoom: 3">zoom 3</div>
-          <div style="zoom: 4">zoom 4</div>
-          <div style="zoom: 5">zoom 5</div>
-          <div style="zoom: 0.5">zoom 0.5</div>
-        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://unpkg.com/popper.js"></script>
-  
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-  
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-          crossorigin="anonymous"
-        ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
-        <script src="js/scroll.js"></script>
-        <script src="js/modal.js"></script>
-    </body>
+  <body onload="init()">
+    <div
+      class="offcanvas offcanvas-top"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title subtitle" id="offcanvasExampleLabel">
+          Замовити дзвінок
+        </h5>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="dropMenu">
+          <input type="text" name="name" id="name" placeholder="Ім’я" />
+          <input type="text" name="phone" id="phone" placeholder="Телефон" />
+          <button
+            id="sendBtn"
+            class="sendBtn subtitle"
+          >
+            хочу на урок!
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="zoom">
+      <header class="header">
+        <div class="section">
+          <div class="headerMenuEmpty"></div>
+          <div class="headerMenu" id="headerMenu">
+            <div class="logo">
+              <img src="images/logo.png" />
+            </div>
+            <div class="contacts">
+              <a href="#" class="instaLogo">
+                <div class="instaLogo">
+                  <img src="images/instBlack.png" />
+                </div>
+              </a>
+              <div class="phoneContainer">
+                <img src="images/phoneIcon.png" />
+                <a href="tel:+380668568535">(066) 856 85 35</a>
+              </div>
+              <div class="phoneContainer">
+                <img src="images/phoneIcon.png" />
+                <a href="tel:+380635193868">(063) 519 38 68</a>
+              </div>
+              <div class="phoneContainer">
+                <img src="images/phoneIcon.png" />
+                <a href="tel:+380673789493">(067) 378 94 93</a>
+              </div>
+              <div
+                class="phoneLogo"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                <img src="images/phoneBtn.png" />
+              </div>
+              <div
+                class="bigPhoneBtn"
+                data-bs-toggle="offcanvas"
+                href="#offcanvasExample"
+                role="button"
+                aria-controls="offcanvasExample"
+              >
+                <span>Замовити дзвінок</span>
+              </div>
+            </div>
+          </div>
+          <div class="text">
+            <h1 class="title">ОНЛАЙН МАТЕМАТИКА</h1>
+            <span class="subtitle">результат за <span>10 уроків</span></span>
+          </div>
+        </div>
+
+        <a href="#course">
+          <div class="arrow">
+            <img class="arrow1" src="images/arrow.png" />
+            <img class="arrow2" src="images/arrow.png" />
+          </div>
+        </a>
+      </header>
+      <section class="courses section">
+        <a href="#preschoolCourse">
+          <div class="preschool" id="preschool">
+            <div class="bookImg">
+              <img id="book" src="images/book.png" />
+              <img id="bookHover" src="images/book2.png" />
+            </div>
+            <div class="textCourses">
+              <span class="middleTitle">курси дошкільної підготовки</span>
+              <p class="kids">для дітей 5-7 років</p>
+            </div>
+          </div>
+        </a>
+        <a href="#schoolCourse">
+          <div class="school" id="school">
+            <div class="bookImg">
+              <img id="pencil" src="images/pencil.png" />
+              <img id="pencilHover" src="images/pencil2.png" />
+            </div>
+            <div class="textCourses">
+              <span class="middleTitle">курси початкових класів</span>
+              <p class="middleKids">1-4 рік навчання</p>
+            </div>
+          </div>
+        </a>
+      </section>
+      <section class="whyWe section">
+        <div class="flex">
+          <div><h2 class="whyTitle subtitle">Чому саме ми?</h2></div>
+          <div class="whyBorder" id="whyBorder">
+            <span class="whySubtitle subtitle">Дізнаємося!</span>
+          </div>
+        </div>
+        <div class="dotted">
+          <div class="dottedItem">
+            <input type="checkbox" id="why1" class="invisibleInput" />
+            <div class="popupContainer">
+              <div class="rightPopup popupContent">
+                <div class="textPopupConbtainer">
+                  <span>
+                    Ми розробили унікальну, а найголовніше результативну
+                    методику навчання. В основі нашого підходу є, що математика
+                    це не складна, а навіть дуже цікава та захоплююча наука!
+                    Навчання проходить в сюжетному й ігровому стилі. Протягом
+                    нашого курсу наші учні відправляються в цікаву подорож з
+                    купою захопливих пригод. Більшість завдань будуть в ігровому
+                    форматі. Але все одно головне для нас - ЦЕ РЕЗУЛЬТАТ
+                  </span>
+                </div>
+              </div>
+              <label for="why1" class="dottedImg">
+                <span class="listNumber">1</span>
+                <img src="images/hand.png" />
+              </label>
+            </div>
+            <div>
+              <label for="why1" class="subtitle">наша унікальна методика</label>
+            </div>
+          </div>
+          <div class="dottedItem revers">
+            <input type="checkbox" id="why2" class="invisibleInput" />
+            <div>
+              <label for="why2" class="subtitle">Професійні вчителі!</label>
+            </div>
+            <div class="popupContainer">
+              <div class="leftPopup popupContent">
+                <div class="textPopupConbtainer">
+                  <span>
+                    Наші вчителі для нас - найголовніший скарб. Кожен з них
+                    пройшов ретельний відбір і підготовку. В нашій школі вас
+                    будуть навчати тільки найкращі спеціалісти. Всі до одного є
+                    найбільш самовідданими прихильниками своєї справи -
+                    педагогіка це їх справжнє покликання!
+                  </span>
+                </div>
+              </div>
+              <label for="why2" class="dottedImg">
+                <span class="listNumber">2</span>
+                <img src="images/hand.png" />
+              </label>
+            </div>
+          </div>
+          <div class="dottedItem">
+            <input type="checkbox" id="why3" class="invisibleInput" />
+            <div class="popupContainer">
+              <div class="rightPopup popupContent">
+                <div class="textPopupConbtainer">
+                  <span>
+                    Математика - одне це слово може багатьох налякати. Але все
+                    зовсім не так! На наших курсах ми покажемо, що математика -
+                    це цікава і захоплююча наука. З нами не потрібно нічого
+                    зубрити і заучувати. Ми покажемо як легко і граючи ваша
+                    дитина зможе зрозуміти всі основи математики і застосовувати
+                    ці знання на практиці.
+                  </span>
+                </div>
+              </div>
+              <label for="why3" class="dottedImg">
+                <span class="listNumber">3</span>
+                <img src="images/hand.png" />
+              </label>
+            </div>
+            <div>
+              <label for="why3" class="subtitle">Ви полюбите математику!</label>
+            </div>
+          </div>
+          <div class="dottedItem revers">
+            <input type="checkbox" id="why4" class="invisibleInput" />
+            <div>
+              <label for="why4" class="subtitle">Навчатися - це легко!</label>
+            </div>
+            <div class="popupContainer">
+              <div class="leftPopup popupContent">
+                <div class="textPopupConbtainer">
+                  <span>
+                    Головна мета будь-якого навчання - це результат. І він є
+                    поперед всього в нашому курсі. Але в основі нашої методики
+                    лежить те, що навчання повинно бути легким і захопливим для
+                    дитини. Ми розробили курс, який покаже, що навчатися зовсім
+                    не складно і нудно. Наші учні самі хочуть займатися з нами.
+                    Ми вміємо перетворити процес навчання на справжню пригоду!
+                  </span>
+                </div>
+              </div>
+              <label for="why4" class="dottedImg">
+                <span class="listNumber">4</span>
+                <img src="images/hand.png" />
+              </label>
+            </div>
+          </div>
+          <div class="dottedItem">
+            <input type="checkbox" id="why5" class="invisibleInput" />
+            <div class="popupContainer">
+              <div class="rightPopup popupContent">
+                <div class="textPopupConbtainer">
+                  <span>
+                    Ми школа PRANA. Навчаємо діточок вже більше 8 років. Наші
+                    курси з "скорочитання" і "логопедії" знають по всій країні.
+                    Тисячі наших учнів навчилися з нами читати і рахувати. Нас
+                    рекомендують і з нами залишаються роками. Ми дійсно знаємо
+                    як навчати дітей!
+                  </span>
+                </div>
+              </div>
+              <label for="why5" class="dottedImg">
+                <span class="listNumber">5</span>
+                <img src="images/hand.png" />
+              </label>
+            </div>
+            <div>
+              <label for="why5" class="subtitle"
+                >Ми маємо величезний досвід!</label
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section testLesson" id="testLesson">
+        <h2 class="testTitle subtitle">бажаєте відвідати тестовий</h2>
+        <div class="freeLesson">
+          <div class="whyBorder">
+            <span class="testTitle subtitle">безкоштовний</span>
+          </div>
+          <div>
+            <span class="testTitle subtitle">урок?</span>
+          </div>
+        </div>
+        <p class="smallText">
+          Наш менеджер зателефонує Вам і підбере курс та вчителя під ваші
+          потреби
+        </p>
+        <div class="dropMenu" id="dropMenu2">
+          <input type="text" name="name" id="name2" placeholder="Ім’я" />
+          <input type="text" name="phone" id="phone2" placeholder="Телефон" />
+          <button
+            id="sendBtn2"
+            class="sendBtn subtitle"
+            data-toggle="modal" data-target="#exampleModal" onclick="insertPhone(this)"
+          >
+            хочу на урок!
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog bg-light">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Перевірте чи вірно введений номер</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <span id="insertedPhone"></span>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="submit" onclick="window.location.href='thank-you.html'" id="btnInVideoBlock" class="btn btn-primary">&#9989 Так, номер вірний</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">&#10060 Помилка</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+      <section class="courseCards section" id="course">
+        <div class="cards" id="target1">
+          <div class="front" id="preschoolCourse">
+            <img src="images/bookCard.png" />
+            <div class="content">
+              <span class="cardTitle">Курс дошкільної підготовки</span>
+              <div class="ul">
+                <li>Цікаво</li>
+                <li>Інтерактивно</li>
+                <li>Результативно</li>
+              </div>
+              <p>Тривалість навчання<span> - 10 уроків</span></p>
+              <p>1 урок<span> - 45 хвилин</span></p>
+              <p>
+                Формат навчання:<span>
+                  Індивідуальне Навчання з викладачем онлайн</span
+                >
+              </p>
+              <p class="price">Ціна -</p>
+              <div><span class="priceNumber">2 490 грн</span></div>
+              <a href="#target1">Детальніше</a>
+            </div>
+          </div>
+          <div class="content back">
+            <span class="smallText">
+              Новітній підхід у навчанні дошкільнят. Протягом курсу наш
+              маленький учень вируше у приголомшливу пригоду разом з нашими
+              головними героями. Вас очікують цікаві ігрові завдання, в яких ми
+              будемо не лише вивчати математику, а й розвивати логіку, пам'ять,
+              увагу тощо. Сучасний підхід у вивчені всіх базових знань з
+              математики, з нами не треба зубрити, протягом наших уроків кожен
+              учень сам прагне дізнатися як найбільше! З нами Ви будете повністю
+              готові ДО 1-го КЛАСУ І НАВІТЬ БІЛЬШЕ! Також для тих дошкільнят,
+              які вже знають всі основи і готові до першого класу - у нас є
+              ДОШКІЛЬНИЙ КУРС ДЛЯ СИЛЬНИХ ДІТЕЙ. В ньому ми будемо давати
+              просунуті завдання для повного та поглибленого розуміння основ
+              математики. Буде велика кількість завдань на логіку і загальний
+              математичний розвиток.</span
+            >
+            <a href="#preschoolCourse">Детальніше</a>
+          </div>
+        </div>
+        <div class="cards" id="secondTarget">
+          <div class="secondFront" id="schoolCourse">
+            <img src="images/pencilCard.png" />
+            <div class="content">
+              <span class="cardTitle">Курси для 1-4 класів</span>
+              <div class="ul">
+                <li>Захоплююче</li>
+                <li>Результативно</li>
+                <li>Інноваційно</li>
+              </div>
+              <p>Тривалість навчання<span> - 10 уроків</span></p>
+              <p>1 урок<span> - 45/60 хвилин</span></p>
+              <p>
+                Формат навчання:<span>
+                  Індивідуальне Навчання з викладачем онлайн</span
+                >
+              </p>
+              <p class="price">Ціна -</p>
+              <div><span class="priceNumber">від 2 490 грн</span></div>
+              <a href="#secondTarget"><span>Детальніше</span></a>
+            </div>
+          </div>
+          <div class="content secondBack">
+            <span class="smallText">
+              Сучасне, цікаве і результативне навчання - ось що очікує Вас в
+              нашому курсі! На основі ваших поточних знань ми побудуємо
+              ІНДИВІДУАЛЬНУ програму під Вашу дитину. Допоможемо, як наздогнати
+              шкільну програму, так і піти далеко вперед. Наша методика надасть
+              не тільки результат, а й покаже вашій дитині, що математику
+              вивчати досить цікаво і захопливо! Більше не буде проблеми з
+              домашнім завданням - ваша дитина сама захоче просуватися далі в
+              вивчені математики. Ми надамо міцний фундамент з усіх математичних
+              знань потрібних вашій дитині. Наші уроки побудовані в ігровому та
+              сюжетному форматі. Навчатися з нами - це дійсно ЛЕГКО І
+              ВЕСЕЛО!</span
+            >
+            <a href="#schoolCourse">Детальніше</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="slider">
+        <h2 class="teacher-block__title fontSliderTitle">наші вчителі</h2>
+        <div class="teacher-block__inner-wrapper">
+          <ul class="nav nav-tabs">
+            <div
+              onclick="left()"
+              class="sliderArrow withoutLeft arrowLeft"
+            ></div>
+            <li class="nav-item teacherItem">
+              <a class="nav-link active" data-toggle="tab" href="#maryana">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--1"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--1"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--1"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem">
+              <a class="nav-link" data-toggle="tab" href="#anastasiya">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--2"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--2"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--2"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem">
+              <a class="nav-link" data-toggle="tab" href="#elena">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--3"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--3"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--3"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem hideTeacher">
+              <a class="nav-link" data-toggle="tab" href="#elena">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--3"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--4"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--4"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem hideTeacher">
+              <a class="nav-link" data-toggle="tab" href="#elena">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--3"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--5"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--5"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem hideTeacher">
+              <a class="nav-link" data-toggle="tab" href="#elena">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--3"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--6"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--6"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item teacherItem hideTeacher">
+              <a class="nav-link" data-toggle="tab" href="#elena">
+                <div class="teacher-block__tab">
+                  <div
+                    class="teacher-block__child teacher-block__child--3"
+                  ></div>
+                </div>
+              </a>
+              <div
+                class="ytBtnContainer"
+                data-bs-toggle="modal"
+                data-bs-target="#child--7"
+              >
+                <div class="ytBtn"></div>
+              </div>
+              <div
+                class="modal fade"
+                id="child--7"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/s9iaF5ft0GQ"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <div
+              onclick="right()"
+              class="sliderArrow arrowRight withoutLeft"
+            ></div>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="maryana">
+              <div class="teacher-block__tab-content">
+                <div class="teacher-block__card teacher-block__card--1"></div>
+                <div class="teacher-block__tab-content-text">
+                  <p
+                    class="teacher-block__tab-content-title fontSliderTeacherName"
+                  >
+                    ФЕДОРЧАК МАР‘ЯНА
+                  </p>
+                  <p class="fontSliderTitleDescription">Освіта:</p>
+                  <p class="fontSliderDescription">
+                    маю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Про себе:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Інше:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю<br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="anastasiya">
+              <div class="teacher-block__tab-content">
+                <div class="teacher-block__card teacher-block__card--2"></div>
+                <div class="teacher-block__tab-content-text">
+                  <p
+                    class="teacher-block__tab-content-title fontSliderTeacherName"
+                  >
+                    ФЕДОРЧАК МАР‘ЯНА2
+                  </p>
+                  <p class="fontSliderTitleDescription">Освіта:</p>
+                  <p class="fontSliderDescription">
+                    маю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Про себе:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Інше:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю<br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="elena">
+              <div class="teacher-block__tab-content">
+                <div class="teacher-block__card teacher-block__card--3"></div>
+                <div class="teacher-block__tab-content-text">
+                  <p
+                    class="teacher-block__tab-content-title fontSliderTeacherName"
+                  >
+                    ФЕДОРЧАК МАР‘ЯНА3
+                  </p>
+                  <p class="fontSliderTitleDescription">Освіта:</p>
+                  <p class="fontSliderDescription">
+                    маю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Про себе:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю <br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                  <p class="fontSliderTitleDescription">Інше:</p>
+                  <p class="fontSliderDescription">
+                    ммаю вищу педагогічну та філологiчну освіту. З дітками я
+                    працюю<br />
+                    уже понад 3 роки, а у сфері швидкочитання більше року.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testLesson todaySection" id="todaySection">
+        <div class="todayContent">
+          <div class="todayText">
+            <div>
+              <h2 class="testTitle subtitle">
+                Розпочнімо<br />
+                навчатися
+              </h2>
+              <div class="whyBorder">
+                <span class="testTitle subtitle">вже сьогодні !</span>
+              </div>
+            </div>
+            <img id="greenHero" src="images/greenHero.png" />
+            <p class="smallText todayText">
+              Наш менеджер зателефонує Вам і підбере курс та вчителя під ваші
+              потреби
+            </p>
+          </div>
+          <div class="grid">
+            <div></div>
+            <div class="dropMenu">
+              <input type="text" name="name" id="name3" placeholder="Ім’я" />
+              <input
+                type="text"
+                name="phone"
+                id="phone3"
+                placeholder="Телефон"
+              />
+              <button
+                id="sendBtn3"
+                class="sendBtn subtitle"
+                data-toggle="modal" data-target="#secondModal" onclick="insertSecondPhone(this)"
+              >
+                хочу на урок!
+              </button>
+            <div class="modal fade" id="secondModal" tabindex="-1" aria-labelledby="secondModalLabel" aria-hidden="true">
+                <div class="modal-dialog bg-light">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="secondModalLabel">Перевірте чи вірно введений номер</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <span id="insertedSecondPhone"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="thank-you.html" id="clickBtnFormBlock" class="btn btn-primary">&#9989 Так, номер вірний</a>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">&#10060 Помилка</button>                                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="section footerSection">
+        <div class="footer">
+          <img id="elephant" src="images/elephant.png" />
+          <img class="logo" src="images/logo.png" />
+        </div>
+        <span class="subtitle">математика з нами - це легко і цікаво !</span>
+        <div class="socials">
+          <a href=""><div class="insta"></div></a>
+          <a href=""><div class="fb"></div></a>
+          <a href=""><div class="telegram"></div></a>
+          <a href=""><div class="viber"></div></a>
+        </div>
+      </footer>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://unpkg.com/popper.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+      <script src="js/scroll.js"></script>
+      <script src="js/modal.js"></script>
+    </div>
+  </body>
 </html>
